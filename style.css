@@ -1,0 +1,74 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body 
+{
+    height: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+    --ColorPrincipal: rgb(61, 115, 185);
+    --ColorSecundario: black;
+}
+
+body {
+    background-color: red;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section {
+    background-color: white;
+    height: 300px;
+    width: 600px;
+    border-radius: 4rem;
+}
+
+article {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    font-size: 1.6rem;
+
+    align-items: center;
+    justify-content: space-evenly;
+    color: var(--ColorPrincipal);
+}
+
+article button {
+    height: 4rem;
+    width: 14rem;
+    border-radius: 2rem;
+    border: none;
+    background-color: var(--ColorPrincipal);
+    color: white;
+    font-size: 1.2rem;
+}
+
+article * {
+    font-weight: bold;
+}
+
+article button:hover {
+    animation-name: animacionBoton;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes animacionBoton {
+    0% {
+        background-color: var(--ColorPrincipal);
+    }
+    
+    100% {
+        
+        background-color: var(--ColorSecundario);
+    }
+    
+}
+

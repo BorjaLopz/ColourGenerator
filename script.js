@@ -9,9 +9,14 @@ console.log(valueNewColour);
 const bodyElement = document.querySelector("body");
 console.log(bodyElement);
 
-button.addEventListener("click", generateNewColour);
+const copyButton = document.querySelector("#copiarButton");
+console.log(copyButton);
 
-function generateNewColour(){
+button.addEventListener("click", generateNewColour);
+copyButton.addEventListener("click", copyText)
+
+function generateNewColour()
+{
     let newColour = newRGB();
     
     //Cambiamos el valor por pantalla
@@ -19,6 +24,21 @@ function generateNewColour(){
 
     //Cambiamos el color del body
     bodyElement.style.background = newColour;
+}
+
+function copyText()
+{
+    addFlashClass();
+    navigator.clipboard.writeText(valueNewColour.textContent);
+}
+
+function addFlashClass() 
+{
+    valueNewColour.classList.add("flashBG");
+
+    setTimeout(() => {
+        valueNewColour.classList.remove("flashBG");
+    }, 250);
 }
 
 function randomNumber(max)

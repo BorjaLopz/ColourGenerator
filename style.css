@@ -20,7 +20,7 @@ body {
     align-items: center;
 }
 
-section {
+body > section {
     background-color: white;
     height: 300px;
     width: 600px;
@@ -40,7 +40,7 @@ article {
     color: var(--ColorPrincipal);
 }
 
-article button {
+article #buttonNewColour {
     height: 4rem;
     width: 14rem;
     border-radius: 2rem;
@@ -48,27 +48,72 @@ article button {
     background-color: var(--ColorPrincipal);
     color: white;
     font-size: 1.2rem;
+    cursor: pointer;
 }
 
 article * {
     font-weight: bold;
 }
 
-article button:hover {
-    animation-name: animacionBoton;
-    animation-duration: 1s;
-    animation-fill-mode: forwards;
+article > section {
+    display: flex;
+    flex-direction: row;
+    /* justify-content: space-between;
+    align-items: center; */
+    gap: 3rem;
 }
 
-@keyframes animacionBoton {
+#copiarButton {
+    border: none;
+    border-radius: 2rem;
+    width: 5rem;
+    height: 100%;
+    background-color: var(--ColorPrincipal);
+    color: white;
+    cursor: pointer;
+}
+
+#copiarButton img 
+{
+    max-width: 30px;
+}
+
+button:hover {
+    box-shadow: inset 0 0 100px 100px rgba(255, 255, 255, 0.1);
+}
+
+.flashBG {
+    animation: flash 500ms ease-out;
+}
+
+@keyframes flash {
     0% {
-        background-color: var(--ColorPrincipal);
+        background-color: #24dfc6;
     }
     
     100% {
         
-        background-color: var(--ColorSecundario);
+        background-color: transparent;
     }
     
 }
 
+@media (max-width: 600px){
+    body > section {
+        max-width: 300px;
+    }
+
+    article > section {
+        gap: 1rem;
+        font-size: 1.4rem;
+    }
+
+    #copiarButton {
+        width: 3rem;
+    }
+
+    #copiarButton img {
+        max-width: 20px;
+    }
+    
+}
